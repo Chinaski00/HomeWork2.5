@@ -1,14 +1,15 @@
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Recipes {
 
     private String lotsProducts;
-    private String totalCost;
+    private int totalCost;
     private String nameRecipe;
-    private Set<String> recipes = new HashSet<>();
+    private HashMap<Product, Integer> map = new HashMap<>();
 
-    public Recipes(String lotsProducts, String totalCost, String nameRecipe) {
+    public Recipes(String lotsProducts, int totalCost, String nameRecipe) {
         this.lotsProducts = lotsProducts;
         this.totalCost = totalCost;
         this.nameRecipe = nameRecipe;
@@ -18,12 +19,17 @@ public class Recipes {
         return lotsProducts;
     }
 
-    public String getTotalCost() {
+    public int getTotalCost() {
         return totalCost;
     }
 
     public String getNameRecipe() {
         return nameRecipe;
+    }
+    public void checkRecipes1(HashMap<Product,Integer> map){
+        if (map.containsValue(null)){
+            map.containsValue(1);
+        }
     }
     public void checkRecipes(Set<Recipes> recipes){
         if (!recipes.contains(this)){

@@ -4,19 +4,21 @@ public class Main {
     public static void main(String[] args){
 
 
-        Product banana = new Product("Банан", "90", "1");
-        Product apple = new Product("Яблоко", "50", "2");
-        Product coconut = new Product("Кокос", "120", "1");
+        Product banana = new Product("Банан", 90, "1");
+        Product apple = new Product("Яблоко", 50, "2");
+        Product coconut = new Product("Кокос", 120, "1");
 
         Set<Product> products = new HashSet<>();
         banana.checkProducts(products);
         apple.checkProducts(products);
 
-        Recipes recipes1 = new Recipes("6","200","Борщ");
-        Recipes recipes2 = new Recipes("3","250","Сендвич");
-        Set<Recipes> recipes = new HashSet<>();
-        recipes1.checkRecipes(recipes);
-        recipes2.checkRecipes(recipes);
+        Recipes recipes1 = new Recipes("1",90,"Банановый смузи");
+        Recipes recipes2 = new Recipes("4",200,"Яблочный смузи");
+        HashMap<Product, Integer> map = new HashMap<>();
+        map.put(banana,1);
+        map.put(apple, 4);
+
+
 
         System.out.println(createSet());
         System.out.println(removeNumbers(createSet()));

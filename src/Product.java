@@ -3,23 +3,18 @@ import java.util.*;
 public class Product {
 
     private String name;
-    private String cost;
+    private int cost;
     private String kg;
     private Set<String> products = new HashSet<>();
 
-    public Product(String name, String cost, String kg) {
+    public Product(String name, int cost, String kg) {
         this.name = name;
         if (!this.name.isBlank() || !this.name.isEmpty()){
             this.name = name;
         } else {
             throw new RuntimeException("Заполните карточку товара полностью");
         }
-        this.cost = cost;
-        if (this.cost.isBlank() || !this.cost.isEmpty()){
-            this.cost = cost;
-        } else {
-            throw new RuntimeException("Заполните карточку товара полностью");
-        }
+        this.cost = Math.abs(cost);
         this.kg = kg;
         if (!this.kg.isBlank() || !this.kg.isEmpty()){
             this.kg = kg;
@@ -36,11 +31,11 @@ public class Product {
         this.name = name;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 
